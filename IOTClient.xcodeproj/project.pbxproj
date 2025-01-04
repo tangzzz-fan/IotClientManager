@@ -3,8 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
+
+/* Begin PBXBuildFile section */
+		06993A4A92B32922E730B375 /* Pods_IOTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768D30E90E1006E4C3ABF7BA /* Pods_IOTClient.framework */; };
+		5C1DDE85EB978FFF370292B8 /* Pods_IOTClient_IOTClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1867C8B6DCAA614B9CA300A2 /* Pods_IOTClient_IOTClientUITests.framework */; };
+		7E34EBCE726D324111881668 /* Pods_IOTClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788CDA642A99988E07C12EE4 /* Pods_IOTClientTests.framework */; };
+		C409AB632D2902C400A40B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C409AB5A2D2902C400A40B58 /* Assets.xcassets */; };
+		C409AB652D2902C400A40B58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C409AB5D2D2902C400A40B58 /* LaunchScreen.storyboard */; };
+		C409AB662D2902C400A40B58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C409AB5F2D2902C400A40B58 /* Main.storyboard */; };
+		C409AB672D2902C400A40B58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB592D2902C400A40B58 /* AppDelegate.swift */; };
+		C409AB682D2902C400A40B58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB602D2902C400A40B58 /* SceneDelegate.swift */; };
+		C409AB692D2902C400A40B58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB612D2902C400A40B58 /* ViewController.swift */; };
+		C409AB6C2D2902C900A40B58 /* IOTClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB6A2D2902C900A40B58 /* IOTClientTests.swift */; };
+		C409AB702D2902CC00A40B58 /* IOTClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB6D2D2902CC00A40B58 /* IOTClientUITests.swift */; };
+		C409AB712D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB6E2D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift */; };
+		C4D6F11A2D290A69001E5F09 /* MQTTConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F10E2D290A69001E5F09 /* MQTTConfiguration.swift */; };
+		C4D6F11B2D290A69001E5F09 /* Notification+MQTT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1072D290A69001E5F09 /* Notification+MQTT.swift */; };
+		C4D6F11C2D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1132D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift */; };
+		C4D6F11E2D290A69001E5F09 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F10A2D290A69001E5F09 /* UserManager.swift */; };
+		C4D6F11F2D290A69001E5F09 /* MQTTClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1152D290A69001E5F09 /* MQTTClientManager.swift */; };
+		C4D6F1202D290A69001E5F09 /* RegionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1092D290A69001E5F09 /* RegionManager.swift */; };
+		C4D6F1212D290A69001E5F09 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1052D290A69001E5F09 /* AppEnvironment.swift */; };
+		C4D6F1222D290A69001E5F09 /* MQTTMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F10C2D290A69001E5F09 /* MQTTMessageHandler.swift */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		C409AB3C2D29027100A40B58 /* PBXContainerItemProxy */ = {
@@ -24,47 +47,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1867C8B6DCAA614B9CA300A2 /* Pods_IOTClient_IOTClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTClient_IOTClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32C3CCA7B07630EC19DFCE2C /* Pods-IOTClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClientTests.release.xcconfig"; path = "Target Support Files/Pods-IOTClientTests/Pods-IOTClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		533F16CFA6CDD0D6C73272F1 /* Pods-IOTClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClientTests.debug.xcconfig"; path = "Target Support Files/Pods-IOTClientTests/Pods-IOTClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		601782F3CEB44CE7EBAEF65E /* Pods-IOTClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClient.release.xcconfig"; path = "Target Support Files/Pods-IOTClient/Pods-IOTClient.release.xcconfig"; sourceTree = "<group>"; };
+		768D30E90E1006E4C3ABF7BA /* Pods_IOTClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		788CDA642A99988E07C12EE4 /* Pods_IOTClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B252A68144F0617E3206B4FD /* Pods-IOTClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClient.debug.xcconfig"; path = "Target Support Files/Pods-IOTClient/Pods-IOTClient.debug.xcconfig"; sourceTree = "<group>"; };
+		BF1F6AAEFBDA9989D27B5140 /* Pods-IOTClient-IOTClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClient-IOTClientUITests.debug.xcconfig"; path = "Target Support Files/Pods-IOTClient-IOTClientUITests/Pods-IOTClient-IOTClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C409AB252D29026F00A40B58 /* IOTClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOTClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C409AB3B2D29027100A40B58 /* IOTClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOTClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C409AB452D29027100A40B58 /* IOTClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOTClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C409AB592D2902C400A40B58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C409AB5A2D2902C400A40B58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C409AB5B2D2902C400A40B58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C409AB5C2D2902C400A40B58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C409AB5E2D2902C400A40B58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C409AB602D2902C400A40B58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C409AB612D2902C400A40B58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C409AB6A2D2902C900A40B58 /* IOTClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTClientTests.swift; sourceTree = "<group>"; };
+		C409AB6D2D2902CC00A40B58 /* IOTClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTClientUITests.swift; sourceTree = "<group>"; };
+		C409AB6E2D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTClientUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C4D6F1052D290A69001E5F09 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		C4D6F1072D290A69001E5F09 /* Notification+MQTT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+MQTT.swift"; sourceTree = "<group>"; };
+		C4D6F1092D290A69001E5F09 /* RegionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionManager.swift; sourceTree = "<group>"; };
+		C4D6F10A2D290A69001E5F09 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		C4D6F10C2D290A69001E5F09 /* MQTTMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTMessageHandler.swift; sourceTree = "<group>"; };
+		C4D6F10E2D290A69001E5F09 /* MQTTConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConfiguration.swift; sourceTree = "<group>"; };
+		C4D6F1132D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTSecurityPolicyFactory.swift; sourceTree = "<group>"; };
+		C4D6F1152D290A69001E5F09 /* MQTTClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClientManager.swift; sourceTree = "<group>"; };
+		FE7B444FEAF14B806777A01E /* Pods-IOTClient-IOTClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClient-IOTClientUITests.release.xcconfig"; path = "Target Support Files/Pods-IOTClient-IOTClientUITests/Pods-IOTClient-IOTClientUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C409AB4D2D29027100A40B58 /* Exceptions for "IOTClient" folder in "IOTClient" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = C409AB242D29026F00A40B58 /* IOTClient */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C409AB272D29026F00A40B58 /* IOTClient */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C409AB4D2D29027100A40B58 /* Exceptions for "IOTClient" folder in "IOTClient" target */,
-			);
-			path = IOTClient;
-			sourceTree = "<group>";
-		};
-		C409AB3E2D29027100A40B58 /* IOTClientTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = IOTClientTests;
-			sourceTree = "<group>";
-		};
-		C409AB482D29027100A40B58 /* IOTClientUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = IOTClientUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C409AB222D29026F00A40B58 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06993A4A92B32922E730B375 /* Pods_IOTClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E34EBCE726D324111881668 /* Pods_IOTClientTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,19 +100,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1DDE85EB978FFF370292B8 /* Pods_IOTClient_IOTClientUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB9E8AE01FFBE49B2E7B4613 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B252A68144F0617E3206B4FD /* Pods-IOTClient.debug.xcconfig */,
+				601782F3CEB44CE7EBAEF65E /* Pods-IOTClient.release.xcconfig */,
+				BF1F6AAEFBDA9989D27B5140 /* Pods-IOTClient-IOTClientUITests.debug.xcconfig */,
+				FE7B444FEAF14B806777A01E /* Pods-IOTClient-IOTClientUITests.release.xcconfig */,
+				533F16CFA6CDD0D6C73272F1 /* Pods-IOTClientTests.debug.xcconfig */,
+				32C3CCA7B07630EC19DFCE2C /* Pods-IOTClientTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B972D215DB7F6F4B25FD468F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				768D30E90E1006E4C3ABF7BA /* Pods_IOTClient.framework */,
+				1867C8B6DCAA614B9CA300A2 /* Pods_IOTClient_IOTClientUITests.framework */,
+				788CDA642A99988E07C12EE4 /* Pods_IOTClientTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C409AB1C2D29026F00A40B58 = {
 			isa = PBXGroup;
 			children = (
-				C409AB272D29026F00A40B58 /* IOTClient */,
-				C409AB3E2D29027100A40B58 /* IOTClientTests */,
-				C409AB482D29027100A40B58 /* IOTClientUITests */,
+				C409AB622D2902C400A40B58 /* IOTClient */,
+				C409AB6B2D2902C900A40B58 /* IOTClientTests */,
+				C409AB6F2D2902CC00A40B58 /* IOTClientUITests */,
 				C409AB262D29026F00A40B58 /* Products */,
+				AB9E8AE01FFBE49B2E7B4613 /* Pods */,
+				B972D215DB7F6F4B25FD468F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +152,101 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C409AB622D2902C400A40B58 /* IOTClient */ = {
+			isa = PBXGroup;
+			children = (
+				C409AB592D2902C400A40B58 /* AppDelegate.swift */,
+				C409AB5A2D2902C400A40B58 /* Assets.xcassets */,
+				C409AB5B2D2902C400A40B58 /* Info.plist */,
+				C409AB5D2D2902C400A40B58 /* LaunchScreen.storyboard */,
+				C409AB5F2D2902C400A40B58 /* Main.storyboard */,
+				C409AB602D2902C400A40B58 /* SceneDelegate.swift */,
+				C409AB612D2902C400A40B58 /* ViewController.swift */,
+				C4D6F1062D290A69001E5F09 /* Environment */,
+				C4D6F1082D290A69001E5F09 /* Extensions */,
+				C4D6F10B2D290A69001E5F09 /* Managers */,
+				C4D6F1162D290A69001E5F09 /* MQTT */,
+			);
+			path = IOTClient;
+			sourceTree = "<group>";
+		};
+		C409AB6B2D2902C900A40B58 /* IOTClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				C409AB6A2D2902C900A40B58 /* IOTClientTests.swift */,
+			);
+			path = IOTClientTests;
+			sourceTree = "<group>";
+		};
+		C409AB6F2D2902CC00A40B58 /* IOTClientUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C409AB6D2D2902CC00A40B58 /* IOTClientUITests.swift */,
+				C409AB6E2D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift */,
+			);
+			path = IOTClientUITests;
+			sourceTree = "<group>";
+		};
+		C4D6F1062D290A69001E5F09 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				C4D6F1052D290A69001E5F09 /* AppEnvironment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		C4D6F1082D290A69001E5F09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4D6F1072D290A69001E5F09 /* Notification+MQTT.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C4D6F10B2D290A69001E5F09 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C4D6F1092D290A69001E5F09 /* RegionManager.swift */,
+				C4D6F10A2D290A69001E5F09 /* UserManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C4D6F10D2D290A69001E5F09 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				C4D6F10C2D290A69001E5F09 /* MQTTMessageHandler.swift */,
+			);
+			path = Handlers;
+			sourceTree = "<group>";
+		};
+		C4D6F1102D290A69001E5F09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4D6F10E2D290A69001E5F09 /* MQTTConfiguration.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C4D6F1142D290A69001E5F09 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				C4D6F1132D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		C4D6F1162D290A69001E5F09 /* MQTT */ = {
+			isa = PBXGroup;
+			children = (
+				C4D6F10D2D290A69001E5F09 /* Handlers */,
+				C4D6F1102D290A69001E5F09 /* Models */,
+				C4D6F1142D290A69001E5F09 /* Security */,
+				C4D6F1152D290A69001E5F09 /* MQTTClientManager.swift */,
+			);
+			path = MQTT;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,20 +254,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C409AB4E2D29027100A40B58 /* Build configuration list for PBXNativeTarget "IOTClient" */;
 			buildPhases = (
+				FD4032228D2BA1918DBEF18C /* [CP] Check Pods Manifest.lock */,
 				C409AB212D29026F00A40B58 /* Sources */,
 				C409AB222D29026F00A40B58 /* Frameworks */,
 				C409AB232D29026F00A40B58 /* Resources */,
+				FE2B344418B6B1DCC4840E38 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				C409AB272D29026F00A40B58 /* IOTClient */,
-			);
 			name = IOTClient;
-			packageProductDependencies = (
-			);
 			productName = IOTClient;
 			productReference = C409AB252D29026F00A40B58 /* IOTClient.app */;
 			productType = "com.apple.product-type.application";
@@ -134,6 +273,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C409AB532D29027100A40B58 /* Build configuration list for PBXNativeTarget "IOTClientTests" */;
 			buildPhases = (
+				5E5002F98CA0EB46E2FE7950 /* [CP] Check Pods Manifest.lock */,
 				C409AB372D29027100A40B58 /* Sources */,
 				C409AB382D29027100A40B58 /* Frameworks */,
 				C409AB392D29027100A40B58 /* Resources */,
@@ -143,12 +283,7 @@
 			dependencies = (
 				C409AB3D2D29027100A40B58 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				C409AB3E2D29027100A40B58 /* IOTClientTests */,
-			);
 			name = IOTClientTests;
-			packageProductDependencies = (
-			);
 			productName = IOTClientTests;
 			productReference = C409AB3B2D29027100A40B58 /* IOTClientTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -157,21 +292,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C409AB562D29027100A40B58 /* Build configuration list for PBXNativeTarget "IOTClientUITests" */;
 			buildPhases = (
+				9A46427CDF682D3281350EA8 /* [CP] Check Pods Manifest.lock */,
 				C409AB412D29027100A40B58 /* Sources */,
 				C409AB422D29027100A40B58 /* Frameworks */,
 				C409AB432D29027100A40B58 /* Resources */,
+				3E219A1FFE9637FADDA27384 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C409AB472D29027100A40B58 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				C409AB482D29027100A40B58 /* IOTClientUITests */,
-			);
 			name = IOTClientUITests;
-			packageProductDependencies = (
-			);
 			productName = IOTClientUITests;
 			productReference = C409AB452D29027100A40B58 /* IOTClientUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -200,6 +332,7 @@
 				};
 			};
 			buildConfigurationList = C409AB202D29026F00A40B58 /* Build configuration list for PBXProject "IOTClient" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -207,8 +340,6 @@
 				Base,
 			);
 			mainGroup = C409AB1C2D29026F00A40B58;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = C409AB262D29026F00A40B58 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -225,6 +356,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C409AB632D2902C400A40B58 /* Assets.xcassets in Resources */,
+				C409AB652D2902C400A40B58 /* LaunchScreen.storyboard in Resources */,
+				C409AB662D2902C400A40B58 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,11 +378,125 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E219A1FFE9637FADDA27384 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOTClient-IOTClientUITests/Pods-IOTClient-IOTClientUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOTClient-IOTClientUITests/Pods-IOTClient-IOTClientUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IOTClient-IOTClientUITests/Pods-IOTClient-IOTClientUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E5002F98CA0EB46E2FE7950 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOTClientTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A46427CDF682D3281350EA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOTClient-IOTClientUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD4032228D2BA1918DBEF18C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOTClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE2B344418B6B1DCC4840E38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOTClient/Pods-IOTClient-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOTClient/Pods-IOTClient-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IOTClient/Pods-IOTClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C409AB212D29026F00A40B58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C409AB672D2902C400A40B58 /* AppDelegate.swift in Sources */,
+				C409AB682D2902C400A40B58 /* SceneDelegate.swift in Sources */,
+				C4D6F11A2D290A69001E5F09 /* MQTTConfiguration.swift in Sources */,
+				C4D6F11B2D290A69001E5F09 /* Notification+MQTT.swift in Sources */,
+				C4D6F11C2D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift in Sources */,
+				C4D6F11E2D290A69001E5F09 /* UserManager.swift in Sources */,
+				C4D6F11F2D290A69001E5F09 /* MQTTClientManager.swift in Sources */,
+				C4D6F1202D290A69001E5F09 /* RegionManager.swift in Sources */,
+				C4D6F1212D290A69001E5F09 /* AppEnvironment.swift in Sources */,
+				C4D6F1222D290A69001E5F09 /* MQTTMessageHandler.swift in Sources */,
+				C409AB692D2902C400A40B58 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C409AB6C2D2902C900A40B58 /* IOTClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +512,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C409AB702D2902CC00A40B58 /* IOTClientUITests.swift in Sources */,
+				C409AB712D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,15 +532,36 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		C409AB5D2D2902C400A40B58 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C409AB5C2D2902C400A40B58 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C409AB5F2D2902C400A40B58 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C409AB5E2D2902C400A40B58 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		C409AB4F2D29027100A40B58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B252A68144F0617E3206B4FD /* Pods-IOTClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R5GV239243;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOTClient/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -297,6 +569,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,12 +585,14 @@
 		};
 		C409AB502D29027100A40B58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 601782F3CEB44CE7EBAEF65E /* Pods-IOTClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R5GV239243;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOTClient/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -325,6 +600,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +735,7 @@
 		};
 		C409AB542D29027100A40B58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 533F16CFA6CDD0D6C73272F1 /* Pods-IOTClientTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +755,7 @@
 		};
 		C409AB552D29027100A40B58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32C3CCA7B07630EC19DFCE2C /* Pods-IOTClientTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -497,6 +775,7 @@
 		};
 		C409AB572D29027100A40B58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF1F6AAEFBDA9989D27B5140 /* Pods-IOTClient-IOTClientUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -514,6 +793,7 @@
 		};
 		C409AB582D29027100A40B58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE7B444FEAF14B806777A01E /* Pods-IOTClient-IOTClientUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
