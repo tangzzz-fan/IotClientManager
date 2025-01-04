@@ -6,121 +6,182 @@ protocol MQTTClientManaging: AnyObject {
     func disconnect()
     func subscribe(to topics: [String])
     func unsubscribe(from topics: [String])
+    func publish(
+        message: Data,
+        to topic: String,
+        qos: MQTTQosLevel,
+        retained: Bool,
+        completion: ((Result<Void, Error>) -> Void)?
+    )
 }
 
 final class MQTTClientManager: NSObject, MQTTClientManaging {
     static let shared = MQTTClientManager()
 
-    private let sessionManager: MQTTSessionManager
-    private let configuration: MQTTConfigurable
-    private let securityPolicyFactory: MQTTSecurityPolicyCreating
-    private var subscribedTopics: [String: NSNumber] = [:]
+    private let clientAdapter: MQTTClientAdapter
+    private let connectionMemento: MQTTConnectionMemento
+    private let messageHandlerChain: MessageHandler
+    private var configuration: MQTTConfigurable
     private var keepAliveTimer: Timer?
+    private var subscribedTopics: [String: NSNumber] = [:]
 
     init(
-        sessionManager: MQTTSessionManager = MQTTSessionManager(),
-        configuration: MQTTConfigurable = MQTTConfiguration.createDefault(
-            environment: AppEnvironment.current,
-            region: RegionManager.shared.currentRegion,
-            userId: UserManager.shared.currentUserId
-        ),
-        securityPolicyFactory: MQTTSecurityPolicyCreating = MQTTSecurityPolicyFactory()
+        configuration: MQTTConfigurable = MQTTConfigurationBuilder()
+            .setHost(AppEnvironment.current.mqttHost)
+            .setPort(AppEnvironment.current.mqttPort)
+            .setClientId(UUID().uuidString)
+            .setCredentials(
+                username: UserManager.shared.currentUserId,
+                password: UserManager.shared.accessToken
+            )
+            .setWill(
+                topic: "client/\(UserManager.shared.currentUserId)/status",
+                message: "offline".data(using: .utf8)!
+            )
+            .build(),
+        clientAdapter: MQTTClientAdapter? = nil,
+        connectionMemento: MQTTConnectionMemento = MQTTConnectionCaretaker()
     ) {
-        self.sessionManager = sessionManager
         self.configuration = configuration
-        self.securityPolicyFactory = securityPolicyFactory
+
+        // 初始化消息处理链
+        let willHandler = WillMessageHandler()
+        let statusHandler = StatusMessageHandler()
+        let notificationHandler = NotificationMessageHandler()
+        willHandler.next = statusHandler
+        statusHandler.next = notificationHandler
+        self.messageHandlerChain = willHandler
+
+        // 初始化适配器
+        if let adapter = clientAdapter {
+            self.clientAdapter = adapter
+        } else {
+            let sessionManager = MQTTSessionManager()
+            self.clientAdapter = MQTTClientCocoaAdapter(client: sessionManager)
+        }
+
+        self.connectionMemento = connectionMemento
+
         super.init()
-        self.sessionManager.delegate = self
-        setupLogging()
+
         setupReconnection()
+        restoreConnectionState()
     }
 
-    private func setupLogging() {
-        MQTTLog.setLogLevel(.info)
-    }
+    // MARK: - Public Methods
 
     func connect(completion: @escaping (Result<Void, Error>) -> Void) {
-        let transport = setupTransport()
-
-        sessionManager.connect(
-            to: configuration.host,
-            port: Int(configuration.port),
-            tls: true,
-            keepalive: 60,
-            clean: true,
-            auth: true,
-            user: configuration.username,
-            pass: configuration.password,
-            will: true,
-            willTopic: configuration.willTopic,
-            willMsg: configuration.willMessage,
-            willQos: .atMostOnce,
-            willRetainFlag: true,
-            withClientId: configuration.clientId,
-            securityPolicy: securityPolicyFactory.createSecurityPolicy(),
-            certificates: transport.certificates,
-            protocolLevel: MQTTProtocolVersion.version0
-        ) { [weak self] error in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(()))
+        clientAdapter.connect { [weak self] result in
+            switch result {
+            case .success:
                 self?.startKeepAliveTimer()
+                self?.saveConnectionState()
+                completion(.success(()))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }
 
     func disconnect() {
-        sessionManager.disconnect { [weak self] error in
-            if error == nil {
-                self?.subscribedTopics.removeAll()
-            }
-        }
-        sessionManager.delegate = nil
         keepAliveTimer?.invalidate()
         keepAliveTimer = nil
-    }
-
-    private func setupTransport() -> MQTTSSLSecurityPolicyTransport {
-        let transport = MQTTSSLSecurityPolicyTransport()
-        transport.host = configuration.host
-        transport.port = configuration.port
-        transport.tls = true
-        transport.securityPolicy = securityPolicyFactory.createSecurityPolicy()
-        return transport
+        clientAdapter.disconnect()
+        subscribedTopics.removeAll()
+        saveConnectionState()
     }
 
     func subscribe(to topics: [String]) {
         topics.forEach { topic in
-            subscribedTopics[topic] = NSNumber(value: MQTTClient.MQTTQosLevel.atLeastOnce.rawValue)
+            subscribedTopics[topic] = NSNumber(value: MQTTQosLevel.atLeastOnce.rawValue)
         }
-        sessionManager.subscriptions = subscribedTopics
+        clientAdapter.subscribe(to: topics)
+        saveConnectionState()
     }
 
     func unsubscribe(from topics: [String]) {
         topics.forEach { topic in
             subscribedTopics.removeValue(forKey: topic)
         }
-        sessionManager.subscriptions = subscribedTopics
+        clientAdapter.unsubscribe(from: topics)
 
         if subscribedTopics.isEmpty {
             disconnect()
         }
+        saveConnectionState()
     }
 
     func publish(
         message: Data,
         to topic: String,
-        qos: MQTTClient.MQTTQosLevel = .atLeastOnce,
+        qos: MQTTQosLevel = .atLeastOnce,
         retained: Bool = false,
         completion: ((Result<Void, Error>) -> Void)? = nil
     ) {
-        let msgId = sessionManager.send(message, topic: topic, qos: qos, retain: retained)
-        if msgId == 0 {
-            completion?(.failure(MQTTError.publishFailed))
-            return
-        }
+        clientAdapter.publish(
+            message: message,
+            topic: topic,
+            qos: Int(qos.rawValue),
+            retained: retained
+        )
         completion?(.success(()))
+    }
+
+    // MARK: - Private Methods
+
+    private func setupReconnection() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleNetworkChange(_:)),
+            name: .connectivityStatusChanged,
+            object: nil
+        )
+    }
+
+    private func startKeepAliveTimer() {
+        keepAliveTimer?.invalidate()
+        keepAliveTimer = Timer.scheduledTimer(
+            withTimeInterval: 30,
+            repeats: true
+        ) { [weak self] _ in
+            self?.checkConnection()
+        }
+    }
+
+    private func checkConnection() {
+        clientAdapter.checkConnection { [weak self] isConnected in
+            if !isConnected {
+                self?.connect { _ in }
+            }
+        }
+    }
+
+    private func saveConnectionState() {
+        let state = MQTTConnectionState(
+            host: configuration.host,
+            port: configuration.port,
+            subscribedTopics: subscribedTopics,
+            lastConnectedTime: Date()
+        )
+        connectionMemento.saveState(state)
+    }
+
+    private func restoreConnectionState() {
+        guard let savedState = connectionMemento.restoreState() else { return }
+        subscribe(to: Array(savedState.subscribedTopics.keys))
+    }
+
+    @objc private func handleNetworkChange(_ notification: Notification) {
+        guard let isConnected = notification.object as? Bool else { return }
+        if isConnected {
+            connect { _ in }
+        }
+    }
+
+    // MARK: - Message Handling
+
+    func handleMessage(_ data: Data, onTopic topic: String, retained: Bool) {
+        _ = messageHandlerChain.handle(data: data, topic: topic, retained: retained)
     }
 }
 
@@ -142,46 +203,6 @@ extension MQTTClientManager: MQTTSessionManagerDelegate {
             print("Connection error")
         default:
             break
-        }
-    }
-
-    func handleMessage(_ data: Data, onTopic topic: String, retained: Bool) {
-        let messageHandler = MQTTMessageHandler()
-        messageHandler.handle(data: data, topic: topic, retained: retained)
-    }
-}
-
-// MARK: - Private Helper Methods
-extension MQTTClientManager {
-    private func setupReconnection() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(handleNetworkChange(_:)),
-            name: .connectivityStatusChanged,
-            object: nil
-        )
-    }
-
-    @objc private func handleNetworkChange(_ notification: Notification) {
-        guard let isConnected = notification.object as? Bool else { return }
-        if isConnected && sessionManager.state != .connected {
-            connect { _ in }
-        }
-    }
-
-    private func startKeepAliveTimer() {
-        keepAliveTimer?.invalidate()
-        keepAliveTimer = Timer.scheduledTimer(
-            withTimeInterval: 30,
-            repeats: true
-        ) { [weak self] _ in
-            self?.checkConnection()
-        }
-    }
-
-    private func checkConnection() {
-        if sessionManager.state != .connected {
-            connect { _ in }
         }
     }
 }

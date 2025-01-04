@@ -1,5 +1,19 @@
 import Foundation
 
+struct Configuration {
+    static let mqttHosts = [
+        "development": "mqtt-dev.example.com",
+        "staging": "mqtt-staging.example.com",
+        "production": "mqtt.example.com"
+    ]
+    
+    static let mqttPorts = [
+        "development": UInt32(8883),
+        "staging": UInt32(8883),
+        "production": UInt32(8883)
+    ]
+}
+
 enum AppEnvironment {
     case development
     case staging
@@ -23,5 +37,13 @@ enum AppEnvironment {
         case .production:
             return ""
         }
+    }
+
+    var mqttHost: String {
+        return Configuration.mqttHosts[String(describing: self)] ?? "mqtt-dev.example.com"
+    }
+
+    var mqttPort: UInt32 {
+        return Configuration.mqttPorts[String(describing: self)] ?? 8883
     }
 }

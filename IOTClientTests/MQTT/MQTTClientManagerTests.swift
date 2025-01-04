@@ -1,5 +1,5 @@
-import XCTest
 import MQTTClient
+import XCTest
 
 @testable import IOTClient
 
@@ -197,7 +197,7 @@ final class MQTTClientManagerTests: XCTestCase {
         if let messageHandler = mockSessionManager.messageHandler {
             messageHandler(testData, testTopic, false)
         }
-        
+
         // Then
         wait(for: [expectation], timeout: 2.0)
     }
@@ -256,13 +256,13 @@ private class MockMQTTSessionManager: MQTTSessionManager {
         get { currentState }
         set { currentState = newValue }
     }
-    
+
     var messageHandler: ((Data, String, Bool) -> Void)? {
         get {
             return delegate?.handleMessage(_:onTopic:retained:)
         }
         set {
-        
+
         }
     }
 

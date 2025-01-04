@@ -25,8 +25,11 @@
 		C4D6F11F2D290A69001E5F09 /* MQTTClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1152D290A69001E5F09 /* MQTTClientManager.swift */; };
 		C4D6F1202D290A69001E5F09 /* RegionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1092D290A69001E5F09 /* RegionManager.swift */; };
 		C4D6F1212D290A69001E5F09 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1052D290A69001E5F09 /* AppEnvironment.swift */; };
-		C4D6F1222D290A69001E5F09 /* MQTTMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F10C2D290A69001E5F09 /* MQTTMessageHandler.swift */; };
 		C4D6F1262D2912B4001E5F09 /* MQTTClientManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1242D2912B4001E5F09 /* MQTTClientManagerTests.swift */; };
+		C4D6F1282D2917DE001E5F09 /* MessageHandlerChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1272D2917DE001E5F09 /* MessageHandlerChain.swift */; };
+		C4D6F12B2D291821001E5F09 /* MQTTClientAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1292D291821001E5F09 /* MQTTClientAdapter.swift */; };
+		C4D6F12E2D291849001E5F09 /* MQTTConnectionMemento.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F12C2D291849001E5F09 /* MQTTConnectionMemento.swift */; };
+		C4D6F1302D291868001E5F09 /* MQTTConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F12F2D291868001E5F09 /* MQTTConfigurationBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,11 +74,14 @@
 		C4D6F1072D290A69001E5F09 /* Notification+MQTT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+MQTT.swift"; sourceTree = "<group>"; };
 		C4D6F1092D290A69001E5F09 /* RegionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionManager.swift; sourceTree = "<group>"; };
 		C4D6F10A2D290A69001E5F09 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		C4D6F10C2D290A69001E5F09 /* MQTTMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTMessageHandler.swift; sourceTree = "<group>"; };
 		C4D6F10E2D290A69001E5F09 /* MQTTConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConfiguration.swift; sourceTree = "<group>"; };
 		C4D6F1132D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTSecurityPolicyFactory.swift; sourceTree = "<group>"; };
 		C4D6F1152D290A69001E5F09 /* MQTTClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClientManager.swift; sourceTree = "<group>"; };
 		C4D6F1242D2912B4001E5F09 /* MQTTClientManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClientManagerTests.swift; sourceTree = "<group>"; };
+		C4D6F1272D2917DE001E5F09 /* MessageHandlerChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandlerChain.swift; sourceTree = "<group>"; };
+		C4D6F1292D291821001E5F09 /* MQTTClientAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClientAdapter.swift; sourceTree = "<group>"; };
+		C4D6F12C2D291849001E5F09 /* MQTTConnectionMemento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConnectionMemento.swift; sourceTree = "<group>"; };
+		C4D6F12F2D291868001E5F09 /* MQTTConfigurationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConfigurationBuilder.swift; sourceTree = "<group>"; };
 		FE7B444FEAF14B806777A01E /* Pods-IOTClient-IOTClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClient-IOTClientUITests.release.xcconfig"; path = "Target Support Files/Pods-IOTClient-IOTClientUITests/Pods-IOTClient-IOTClientUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,7 +221,7 @@
 		C4D6F10D2D290A69001E5F09 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				C4D6F10C2D290A69001E5F09 /* MQTTMessageHandler.swift */,
+				C4D6F1272D2917DE001E5F09 /* MessageHandlerChain.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				C4D6F10E2D290A69001E5F09 /* MQTTConfiguration.swift */,
+				C4D6F12F2D291868001E5F09 /* MQTTConfigurationBuilder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,6 +246,8 @@
 		C4D6F1162D290A69001E5F09 /* MQTT */ = {
 			isa = PBXGroup;
 			children = (
+				C4D6F12D2D291849001E5F09 /* Memento */,
+				C4D6F12A2D291821001E5F09 /* Adapters */,
 				C4D6F10D2D290A69001E5F09 /* Handlers */,
 				C4D6F1102D290A69001E5F09 /* Models */,
 				C4D6F1142D290A69001E5F09 /* Security */,
@@ -253,6 +262,22 @@
 				C4D6F1242D2912B4001E5F09 /* MQTTClientManagerTests.swift */,
 			);
 			path = MQTT;
+			sourceTree = "<group>";
+		};
+		C4D6F12A2D291821001E5F09 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				C4D6F1292D291821001E5F09 /* MQTTClientAdapter.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		C4D6F12D2D291849001E5F09 /* Memento */ = {
+			isa = PBXGroup;
+			children = (
+				C4D6F12C2D291849001E5F09 /* MQTTConnectionMemento.swift */,
+			);
+			path = Memento;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,14 +521,17 @@
 			files = (
 				C409AB672D2902C400A40B58 /* AppDelegate.swift in Sources */,
 				C409AB682D2902C400A40B58 /* SceneDelegate.swift in Sources */,
+				C4D6F1302D291868001E5F09 /* MQTTConfigurationBuilder.swift in Sources */,
+				C4D6F1282D2917DE001E5F09 /* MessageHandlerChain.swift in Sources */,
 				C4D6F11A2D290A69001E5F09 /* MQTTConfiguration.swift in Sources */,
 				C4D6F11B2D290A69001E5F09 /* Notification+MQTT.swift in Sources */,
 				C4D6F11C2D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift in Sources */,
 				C4D6F11E2D290A69001E5F09 /* UserManager.swift in Sources */,
 				C4D6F11F2D290A69001E5F09 /* MQTTClientManager.swift in Sources */,
+				C4D6F12B2D291821001E5F09 /* MQTTClientAdapter.swift in Sources */,
 				C4D6F1202D290A69001E5F09 /* RegionManager.swift in Sources */,
+				C4D6F12E2D291849001E5F09 /* MQTTConnectionMemento.swift in Sources */,
 				C4D6F1212D290A69001E5F09 /* AppEnvironment.swift in Sources */,
-				C4D6F1222D290A69001E5F09 /* MQTTMessageHandler.swift in Sources */,
 				C409AB692D2902C400A40B58 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
