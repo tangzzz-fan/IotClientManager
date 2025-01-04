@@ -16,7 +16,6 @@
 		C409AB672D2902C400A40B58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB592D2902C400A40B58 /* AppDelegate.swift */; };
 		C409AB682D2902C400A40B58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB602D2902C400A40B58 /* SceneDelegate.swift */; };
 		C409AB692D2902C400A40B58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB612D2902C400A40B58 /* ViewController.swift */; };
-		C409AB6C2D2902C900A40B58 /* IOTClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB6A2D2902C900A40B58 /* IOTClientTests.swift */; };
 		C409AB702D2902CC00A40B58 /* IOTClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB6D2D2902CC00A40B58 /* IOTClientUITests.swift */; };
 		C409AB712D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB6E2D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift */; };
 		C4D6F11A2D290A69001E5F09 /* MQTTConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F10E2D290A69001E5F09 /* MQTTConfiguration.swift */; };
@@ -27,6 +26,7 @@
 		C4D6F1202D290A69001E5F09 /* RegionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1092D290A69001E5F09 /* RegionManager.swift */; };
 		C4D6F1212D290A69001E5F09 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1052D290A69001E5F09 /* AppEnvironment.swift */; };
 		C4D6F1222D290A69001E5F09 /* MQTTMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F10C2D290A69001E5F09 /* MQTTMessageHandler.swift */; };
+		C4D6F1262D2912B4001E5F09 /* MQTTClientManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1242D2912B4001E5F09 /* MQTTClientManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,6 @@
 		C409AB5E2D2902C400A40B58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C409AB602D2902C400A40B58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C409AB612D2902C400A40B58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C409AB6A2D2902C900A40B58 /* IOTClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTClientTests.swift; sourceTree = "<group>"; };
 		C409AB6D2D2902CC00A40B58 /* IOTClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTClientUITests.swift; sourceTree = "<group>"; };
 		C409AB6E2D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTClientUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C4D6F1052D290A69001E5F09 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		C4D6F10E2D290A69001E5F09 /* MQTTConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConfiguration.swift; sourceTree = "<group>"; };
 		C4D6F1132D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTSecurityPolicyFactory.swift; sourceTree = "<group>"; };
 		C4D6F1152D290A69001E5F09 /* MQTTClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClientManager.swift; sourceTree = "<group>"; };
+		C4D6F1242D2912B4001E5F09 /* MQTTClientManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClientManagerTests.swift; sourceTree = "<group>"; };
 		FE7B444FEAF14B806777A01E /* Pods-IOTClient-IOTClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClient-IOTClientUITests.release.xcconfig"; path = "Target Support Files/Pods-IOTClient-IOTClientUITests/Pods-IOTClient-IOTClientUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,7 +173,7 @@
 		C409AB6B2D2902C900A40B58 /* IOTClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				C409AB6A2D2902C900A40B58 /* IOTClientTests.swift */,
+				C4D6F1252D2912B4001E5F09 /* MQTT */,
 			);
 			path = IOTClientTests;
 			sourceTree = "<group>";
@@ -243,6 +243,14 @@
 				C4D6F1102D290A69001E5F09 /* Models */,
 				C4D6F1142D290A69001E5F09 /* Security */,
 				C4D6F1152D290A69001E5F09 /* MQTTClientManager.swift */,
+			);
+			path = MQTT;
+			sourceTree = "<group>";
+		};
+		C4D6F1252D2912B4001E5F09 /* MQTT */ = {
+			isa = PBXGroup;
+			children = (
+				C4D6F1242D2912B4001E5F09 /* MQTTClientManagerTests.swift */,
 			);
 			path = MQTT;
 			sourceTree = "<group>";
@@ -504,7 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C409AB6C2D2902C900A40B58 /* IOTClientTests.swift in Sources */,
+				C4D6F1262D2912B4001E5F09 /* MQTTClientManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

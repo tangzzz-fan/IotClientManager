@@ -17,14 +17,18 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
     private var subscribedTopics: [String: NSNumber] = [:]
     private var keepAliveTimer: Timer?
 
-    private override init() {
-        self.sessionManager = MQTTSessionManager()
-        self.securityPolicyFactory = MQTTSecurityPolicyFactory()
-        self.configuration = MQTTConfiguration.createDefault(
+    init(
+        sessionManager: MQTTSessionManager = MQTTSessionManager(),
+        configuration: MQTTConfigurable = MQTTConfiguration.createDefault(
             environment: AppEnvironment.current,
             region: RegionManager.shared.currentRegion,
             userId: UserManager.shared.currentUserId
-        )
+        ),
+        securityPolicyFactory: MQTTSecurityPolicyCreating = MQTTSecurityPolicyFactory()
+    ) {
+        self.sessionManager = sessionManager
+        self.configuration = configuration
+        self.securityPolicyFactory = securityPolicyFactory
         super.init()
         self.sessionManager.delegate = self
         setupLogging()
@@ -56,7 +60,7 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
             securityPolicy: securityPolicyFactory.createSecurityPolicy(),
             certificates: transport.certificates,
             protocolLevel: MQTTProtocolVersion.version0
-        ) {[weak self] error in
+        ) { [weak self] error in
             if let error = error {
                 completion(.failure(error))
             } else {
