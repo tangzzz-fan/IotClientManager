@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 初始化BLE管理器
+        BLEManager.shared.initialize()
+        
         return true
     }
 
@@ -33,4 +37,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

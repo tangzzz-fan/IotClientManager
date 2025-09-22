@@ -15,7 +15,7 @@ target 'IOTClient' do
 
   # Pods for IOTClient
   pod 'MQTTClient'
-#  pod 'CocoaAsyncSocket'
+  pod 'CocoaAsyncSocket'
   
   target 'IOTClientTests' do
     inherit! :search_paths

@@ -3,33 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		06993A4A92B32922E730B375 /* Pods_IOTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768D30E90E1006E4C3ABF7BA /* Pods_IOTClient.framework */; };
+		18FCE1022E814F7600BAE1DD /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FCE1012E814F7600BAE1DD /* CoreBluetooth.framework */; };
 		5C1DDE85EB978FFF370292B8 /* Pods_IOTClient_IOTClientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1867C8B6DCAA614B9CA300A2 /* Pods_IOTClient_IOTClientUITests.framework */; };
 		7E34EBCE726D324111881668 /* Pods_IOTClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788CDA642A99988E07C12EE4 /* Pods_IOTClientTests.framework */; };
-		C409AB632D2902C400A40B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C409AB5A2D2902C400A40B58 /* Assets.xcassets */; };
-		C409AB652D2902C400A40B58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C409AB5D2D2902C400A40B58 /* LaunchScreen.storyboard */; };
-		C409AB662D2902C400A40B58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C409AB5F2D2902C400A40B58 /* Main.storyboard */; };
-		C409AB672D2902C400A40B58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB592D2902C400A40B58 /* AppDelegate.swift */; };
-		C409AB682D2902C400A40B58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB602D2902C400A40B58 /* SceneDelegate.swift */; };
-		C409AB692D2902C400A40B58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB612D2902C400A40B58 /* ViewController.swift */; };
 		C409AB702D2902CC00A40B58 /* IOTClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB6D2D2902CC00A40B58 /* IOTClientUITests.swift */; };
 		C409AB712D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C409AB6E2D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift */; };
-		C4D6F11A2D290A69001E5F09 /* MQTTConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F10E2D290A69001E5F09 /* MQTTConfiguration.swift */; };
-		C4D6F11B2D290A69001E5F09 /* Notification+MQTT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1072D290A69001E5F09 /* Notification+MQTT.swift */; };
-		C4D6F11C2D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1132D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift */; };
-		C4D6F11E2D290A69001E5F09 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F10A2D290A69001E5F09 /* UserManager.swift */; };
-		C4D6F11F2D290A69001E5F09 /* MQTTClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1152D290A69001E5F09 /* MQTTClientManager.swift */; };
-		C4D6F1202D290A69001E5F09 /* RegionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1092D290A69001E5F09 /* RegionManager.swift */; };
-		C4D6F1212D290A69001E5F09 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1052D290A69001E5F09 /* AppEnvironment.swift */; };
 		C4D6F1262D2912B4001E5F09 /* MQTTClientManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1242D2912B4001E5F09 /* MQTTClientManagerTests.swift */; };
-		C4D6F1282D2917DE001E5F09 /* MessageHandlerChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1272D2917DE001E5F09 /* MessageHandlerChain.swift */; };
-		C4D6F12B2D291821001E5F09 /* MQTTClientAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F1292D291821001E5F09 /* MQTTClientAdapter.swift */; };
-		C4D6F12E2D291849001E5F09 /* MQTTConnectionMemento.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F12C2D291849001E5F09 /* MQTTConnectionMemento.swift */; };
-		C4D6F1302D291868001E5F09 /* MQTTConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6F12F2D291868001E5F09 /* MQTTConfigurationBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		1867C8B6DCAA614B9CA300A2 /* Pods_IOTClient_IOTClientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOTClient_IOTClientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18FCE1012E814F7600BAE1DD /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		32C3CCA7B07630EC19DFCE2C /* Pods-IOTClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClientTests.release.xcconfig"; path = "Target Support Files/Pods-IOTClientTests/Pods-IOTClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		533F16CFA6CDD0D6C73272F1 /* Pods-IOTClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClientTests.debug.xcconfig"; path = "Target Support Files/Pods-IOTClientTests/Pods-IOTClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		601782F3CEB44CE7EBAEF65E /* Pods-IOTClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClient.release.xcconfig"; path = "Target Support Files/Pods-IOTClient/Pods-IOTClient.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,35 +46,32 @@
 		C409AB252D29026F00A40B58 /* IOTClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOTClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C409AB3B2D29027100A40B58 /* IOTClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOTClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C409AB452D29027100A40B58 /* IOTClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOTClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C409AB592D2902C400A40B58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C409AB5A2D2902C400A40B58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C409AB5B2D2902C400A40B58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C409AB5C2D2902C400A40B58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C409AB5E2D2902C400A40B58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C409AB602D2902C400A40B58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C409AB612D2902C400A40B58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C409AB6D2D2902CC00A40B58 /* IOTClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTClientUITests.swift; sourceTree = "<group>"; };
 		C409AB6E2D2902CC00A40B58 /* IOTClientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTClientUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		C4D6F1052D290A69001E5F09 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		C4D6F1072D290A69001E5F09 /* Notification+MQTT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+MQTT.swift"; sourceTree = "<group>"; };
-		C4D6F1092D290A69001E5F09 /* RegionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionManager.swift; sourceTree = "<group>"; };
-		C4D6F10A2D290A69001E5F09 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		C4D6F10E2D290A69001E5F09 /* MQTTConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConfiguration.swift; sourceTree = "<group>"; };
-		C4D6F1132D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTSecurityPolicyFactory.swift; sourceTree = "<group>"; };
-		C4D6F1152D290A69001E5F09 /* MQTTClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClientManager.swift; sourceTree = "<group>"; };
 		C4D6F1242D2912B4001E5F09 /* MQTTClientManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClientManagerTests.swift; sourceTree = "<group>"; };
-		C4D6F1272D2917DE001E5F09 /* MessageHandlerChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandlerChain.swift; sourceTree = "<group>"; };
-		C4D6F1292D291821001E5F09 /* MQTTClientAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTClientAdapter.swift; sourceTree = "<group>"; };
-		C4D6F12C2D291849001E5F09 /* MQTTConnectionMemento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConnectionMemento.swift; sourceTree = "<group>"; };
-		C4D6F12F2D291868001E5F09 /* MQTTConfigurationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTConfigurationBuilder.swift; sourceTree = "<group>"; };
 		FE7B444FEAF14B806777A01E /* Pods-IOTClient-IOTClientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOTClient-IOTClientUITests.release.xcconfig"; path = "Target Support Files/Pods-IOTClient-IOTClientUITests/Pods-IOTClient-IOTClientUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		18FCE08A2E8149FA00BAE1DD /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = C409AB242D29026F00A40B58 /* IOTClient */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		18FCE0732E8149FA00BAE1DD /* IOTClient */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18FCE08A2E8149FA00BAE1DD /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = IOTClient; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C409AB222D29026F00A40B58 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18FCE1022E814F7600BAE1DD /* CoreBluetooth.framework in Frameworks */,
 				06993A4A92B32922E730B375 /* Pods_IOTClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +111,7 @@
 		B972D215DB7F6F4B25FD468F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18FCE1012E814F7600BAE1DD /* CoreBluetooth.framework */,
 				768D30E90E1006E4C3ABF7BA /* Pods_IOTClient.framework */,
 				1867C8B6DCAA614B9CA300A2 /* Pods_IOTClient_IOTClientUITests.framework */,
 				788CDA642A99988E07C12EE4 /* Pods_IOTClientTests.framework */,
@@ -139,7 +122,7 @@
 		C409AB1C2D29026F00A40B58 = {
 			isa = PBXGroup;
 			children = (
-				C409AB622D2902C400A40B58 /* IOTClient */,
+				18FCE0732E8149FA00BAE1DD /* IOTClient */,
 				C409AB6B2D2902C900A40B58 /* IOTClientTests */,
 				C409AB6F2D2902CC00A40B58 /* IOTClientUITests */,
 				C409AB262D29026F00A40B58 /* Products */,
@@ -156,24 +139,6 @@
 				C409AB452D29027100A40B58 /* IOTClientUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		C409AB622D2902C400A40B58 /* IOTClient */ = {
-			isa = PBXGroup;
-			children = (
-				C409AB592D2902C400A40B58 /* AppDelegate.swift */,
-				C409AB5A2D2902C400A40B58 /* Assets.xcassets */,
-				C409AB5B2D2902C400A40B58 /* Info.plist */,
-				C409AB5D2D2902C400A40B58 /* LaunchScreen.storyboard */,
-				C409AB5F2D2902C400A40B58 /* Main.storyboard */,
-				C409AB602D2902C400A40B58 /* SceneDelegate.swift */,
-				C409AB612D2902C400A40B58 /* ViewController.swift */,
-				C4D6F1062D290A69001E5F09 /* Environment */,
-				C4D6F1082D290A69001E5F09 /* Extensions */,
-				C4D6F10B2D290A69001E5F09 /* Managers */,
-				C4D6F1162D290A69001E5F09 /* MQTT */,
-			);
-			path = IOTClient;
 			sourceTree = "<group>";
 		};
 		C409AB6B2D2902C900A40B58 /* IOTClientTests */ = {
@@ -193,91 +158,12 @@
 			path = IOTClientUITests;
 			sourceTree = "<group>";
 		};
-		C4D6F1062D290A69001E5F09 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				C4D6F1052D290A69001E5F09 /* AppEnvironment.swift */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
-		C4D6F1082D290A69001E5F09 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				C4D6F1072D290A69001E5F09 /* Notification+MQTT.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		C4D6F10B2D290A69001E5F09 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				C4D6F1092D290A69001E5F09 /* RegionManager.swift */,
-				C4D6F10A2D290A69001E5F09 /* UserManager.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		C4D6F10D2D290A69001E5F09 /* Handlers */ = {
-			isa = PBXGroup;
-			children = (
-				C4D6F1272D2917DE001E5F09 /* MessageHandlerChain.swift */,
-			);
-			path = Handlers;
-			sourceTree = "<group>";
-		};
-		C4D6F1102D290A69001E5F09 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C4D6F10E2D290A69001E5F09 /* MQTTConfiguration.swift */,
-				C4D6F12F2D291868001E5F09 /* MQTTConfigurationBuilder.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		C4D6F1142D290A69001E5F09 /* Security */ = {
-			isa = PBXGroup;
-			children = (
-				C4D6F1132D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift */,
-			);
-			path = Security;
-			sourceTree = "<group>";
-		};
-		C4D6F1162D290A69001E5F09 /* MQTT */ = {
-			isa = PBXGroup;
-			children = (
-				C4D6F12D2D291849001E5F09 /* Memento */,
-				C4D6F12A2D291821001E5F09 /* Adapters */,
-				C4D6F10D2D290A69001E5F09 /* Handlers */,
-				C4D6F1102D290A69001E5F09 /* Models */,
-				C4D6F1142D290A69001E5F09 /* Security */,
-				C4D6F1152D290A69001E5F09 /* MQTTClientManager.swift */,
-			);
-			path = MQTT;
-			sourceTree = "<group>";
-		};
 		C4D6F1252D2912B4001E5F09 /* MQTT */ = {
 			isa = PBXGroup;
 			children = (
 				C4D6F1242D2912B4001E5F09 /* MQTTClientManagerTests.swift */,
 			);
 			path = MQTT;
-			sourceTree = "<group>";
-		};
-		C4D6F12A2D291821001E5F09 /* Adapters */ = {
-			isa = PBXGroup;
-			children = (
-				C4D6F1292D291821001E5F09 /* MQTTClientAdapter.swift */,
-			);
-			path = Adapters;
-			sourceTree = "<group>";
-		};
-		C4D6F12D2D291849001E5F09 /* Memento */ = {
-			isa = PBXGroup;
-			children = (
-				C4D6F12C2D291849001E5F09 /* MQTTConnectionMemento.swift */,
-			);
-			path = Memento;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +182,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				18FCE0732E8149FA00BAE1DD /* IOTClient */,
 			);
 			name = IOTClient;
 			productName = IOTClient;
@@ -389,9 +278,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C409AB632D2902C400A40B58 /* Assets.xcassets in Resources */,
-				C409AB652D2902C400A40B58 /* LaunchScreen.storyboard in Resources */,
-				C409AB662D2902C400A40B58 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,9 +306,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IOTClient-IOTClientUITests/Pods-IOTClient-IOTClientUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IOTClient-IOTClientUITests/Pods-IOTClient-IOTClientUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -503,9 +393,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IOTClient/Pods-IOTClient-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-IOTClient/Pods-IOTClient-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -519,20 +413,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C409AB672D2902C400A40B58 /* AppDelegate.swift in Sources */,
-				C409AB682D2902C400A40B58 /* SceneDelegate.swift in Sources */,
-				C4D6F1302D291868001E5F09 /* MQTTConfigurationBuilder.swift in Sources */,
-				C4D6F1282D2917DE001E5F09 /* MessageHandlerChain.swift in Sources */,
-				C4D6F11A2D290A69001E5F09 /* MQTTConfiguration.swift in Sources */,
-				C4D6F11B2D290A69001E5F09 /* Notification+MQTT.swift in Sources */,
-				C4D6F11C2D290A69001E5F09 /* MQTTSecurityPolicyFactory.swift in Sources */,
-				C4D6F11E2D290A69001E5F09 /* UserManager.swift in Sources */,
-				C4D6F11F2D290A69001E5F09 /* MQTTClientManager.swift in Sources */,
-				C4D6F12B2D291821001E5F09 /* MQTTClientAdapter.swift in Sources */,
-				C4D6F1202D290A69001E5F09 /* RegionManager.swift in Sources */,
-				C4D6F12E2D291849001E5F09 /* MQTTConnectionMemento.swift in Sources */,
-				C4D6F1212D290A69001E5F09 /* AppEnvironment.swift in Sources */,
-				C409AB692D2902C400A40B58 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,25 +448,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		C409AB5D2D2902C400A40B58 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C409AB5C2D2902C400A40B58 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		C409AB5F2D2902C400A40B58 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C409AB5E2D2902C400A40B58 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		C409AB4F2D29027100A40B58 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -594,15 +455,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IOTClient/IOTClient.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R5GV239243;
+				DEVELOPMENT_TEAM = P48TU896KM;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOTClient/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Privacy - Bluetooth Always Usage Description";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Privacy - Bluetooth Peripheral Usage Description";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -625,15 +489,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IOTClient/IOTClient.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R5GV239243;
+				DEVELOPMENT_TEAM = P48TU896KM;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOTClient/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Privacy - Bluetooth Always Usage Description";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Privacy - Bluetooth Peripheral Usage Description";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

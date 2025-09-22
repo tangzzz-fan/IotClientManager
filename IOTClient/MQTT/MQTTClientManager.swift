@@ -57,7 +57,7 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
             self.clientAdapter = adapter
         } else {
             let sessionManager = MQTTSessionManager()
-            self.clientAdapter = MQTTClientCocoaAdapter(client: sessionManager)
+            self.clientAdapter = MQTTClientCocoaAdapter(client: sessionManager, configuration: configuration)
         }
 
         self.connectionMemento = connectionMemento
@@ -71,19 +71,23 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
     // MARK: - Public Methods
 
     func connect(completion: @escaping (Result<Void, Error>) -> Void) {
+        print("Attempting to connect to MQTT broker at \(configuration.host):\(configuration.port)")
         clientAdapter.connect { [weak self] result in
             switch result {
             case .success:
+                print("Successfully connected to MQTT broker")
                 self?.startKeepAliveTimer()
                 self?.saveConnectionState()
                 completion(.success(()))
             case .failure(let error):
+                print("Failed to connect to MQTT broker: \(error)")
                 completion(.failure(error))
             }
         }
     }
 
     func disconnect() {
+        print("Disconnecting from MQTT broker")
         keepAliveTimer?.invalidate()
         keepAliveTimer = nil
         clientAdapter.disconnect()
@@ -92,6 +96,7 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
     }
 
     func subscribe(to topics: [String]) {
+        print("Subscribing to topics: \(topics)")
         topics.forEach { topic in
             subscribedTopics[topic] = NSNumber(value: MQTTQosLevel.atLeastOnce.rawValue)
         }
@@ -100,6 +105,7 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
     }
 
     func unsubscribe(from topics: [String]) {
+        print("Unsubscribing from topics: \(topics)")
         topics.forEach { topic in
             subscribedTopics.removeValue(forKey: topic)
         }
@@ -118,6 +124,7 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
         retained: Bool = false,
         completion: ((Result<Void, Error>) -> Void)? = nil
     ) {
+        print("Publishing message to topic: \(topic)")
         clientAdapter.publish(
             message: message,
             topic: topic,
@@ -151,6 +158,7 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
     private func checkConnection() {
         clientAdapter.checkConnection { [weak self] isConnected in
             if !isConnected {
+                print("Connection lost, attempting to reconnect...")
                 self?.connect { _ in }
             }
         }
@@ -168,11 +176,13 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
 
     private func restoreConnectionState() {
         guard let savedState = connectionMemento.restoreState() else { return }
+        print("Restoring connection state with topics: \(Array(savedState.subscribedTopics.keys))")
         subscribe(to: Array(savedState.subscribedTopics.keys))
     }
 
     @objc private func handleNetworkChange(_ notification: Notification) {
         guard let isConnected = notification.object as? Bool else { return }
+        print("Network status changed: isConnected = \(isConnected)")
         if isConnected {
             connect { _ in }
         }
@@ -181,6 +191,7 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
     // MARK: - Message Handling
 
     func handleMessage(_ data: Data, onTopic topic: String, retained: Bool) {
+        print("Handling message on topic: \(topic)")
         _ = messageHandlerChain.handle(data: data, topic: topic, retained: retained)
     }
 }
@@ -192,18 +203,25 @@ extension MQTTClientManager: MQTTSessionManagerDelegate {
     ) {
         switch newState {
         case .starting:
-            print("Starting connection")
+            print("MQTT connection state: Starting connection")
         case .connecting:
-            print("Connecting")
+            print("MQTT connection state: Connecting to broker")
         case .connected:
-            print("Connected")
+            print("MQTT connection state: Successfully connected to broker")
         case .closing:
-            print("Closing connection")
+            print("MQTT connection state: Closing connection")
         case .error:
-            print("Connection error")
+            print("MQTT connection state: Connection error occurred")
+        case .closed:
+            print("MQTT connection state: Connection closed")
         default:
-            break
+            print("MQTT connection state: Unknown state \(newState)")
         }
+    }
+    
+    func sessionManager(_ sessionManager: MQTTSessionManager, didReceive message: Data, onTopic topic: String, qos: MQTTQosLevel, retained: Bool, mid: UInt32) {
+        print("Received MQTT message on topic: \(topic)")
+        handleMessage(message, onTopic: topic, retained: retained)
     }
 }
 
