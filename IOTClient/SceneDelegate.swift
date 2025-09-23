@@ -13,13 +13,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // 使用代码创建窗口和根视图控制器，替代Storyboard
+        // 使用 AppCoordinator 管理应用启动
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let rootViewController = ViewController()
-        window?.rootViewController = rootViewController
-        window?.makeKeyAndVisible()
+        
+        // 使用 AppCoordinator 启动应用
+        AppCoordinator.shared.start(with: window!)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -48,6 +48,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        
+        // 通知 AppCoordinator 应用进入后台
+        // AppCoordinator 会自动处理后台状态
     }
 
 

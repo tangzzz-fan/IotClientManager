@@ -68,6 +68,33 @@ final class MQTTClientManager: NSObject, MQTTClientManaging {
         restoreConnectionState()
     }
 
+    var isConnected: Bool {
+        return clientAdapter.isConnected
+    }
+    
+    /// 初始化MQTT客户端管理器
+    func initialize() {
+        print("[MQTTClientManager] 初始化MQTT客户端管理器")
+        // 恢复连接状态
+        restoreConnectionState()
+        // 设置网络监听
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleNetworkChange(_:)),
+            name: .networkStatusChanged,
+            object: nil
+        )
+    }
+    
+    /// 关闭MQTT客户端管理器
+    func shutdown() {
+        print("[MQTTClientManager] 关闭MQTT客户端管理器")
+        disconnect()
+        keepAliveTimer?.invalidate()
+        keepAliveTimer = nil
+        NotificationCenter.default.removeObserver(self)
+    }
+
     // MARK: - Public Methods
 
     func connect(completion: @escaping (Result<Void, Error>) -> Void) {

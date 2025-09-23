@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // 初始化BLE管理器
-        BLEManager.shared.initialize()
+        // 注意: 应用启动现在由 AppCoordinator 在 SceneDelegate 中管理
+        // 这里只做一些全局的应用级别配置
+        
+        print("[AppDelegate] 应用启动完成")
         
         return true
     }

@@ -24,10 +24,27 @@ class BLEManager: NSObject {
     private var characteristics: [CBUUID: CBCharacteristic] = [:]
     private var services: [CBUUID: CBService] = [:]
     
+    // 初始化状态
+    private(set) var isInitialized = false
+    
     // MARK: - 初始化
     
     func initialize() {
+        print("[BLEManager] 初始化BLE管理器")
         centralManager = CBCentralManager(delegate: self, queue: nil)
+        isInitialized = true
+    }
+    
+    func shutdown() {
+        print("[BLEManager] 关闭BLE管理器")
+        stopScanning()
+        disconnectAll()
+        centralManager = nil
+        connectedPeripherals.removeAll()
+        discoveredPeripherals.removeAll()
+        characteristics.removeAll()
+        services.removeAll()
+        isInitialized = false
     }
     
     // MARK: - 扫描控制
